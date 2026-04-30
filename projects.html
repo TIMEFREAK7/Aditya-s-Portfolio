@@ -4,51 +4,105 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects | Aditya Abhyankar</title>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230f3b5f'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 4c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm0 13c-2.33 0-4.31-1.46-5.11-3.5h10.22c-.8 2.04-2.78 3.5-5.11 3.5z'/%3E%3C/svg%3E">
   <script src="js/script.js" defer></script>
 </head>
 <body>
-  <header class="navbar"><div class="container nav-container"><a href="index.html" class="logo">aditya<span>.</span>abhyankar</a><nav class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="resume.html">Resume</a><a href="projects.html" class="active">Projects</a><a href="contact.html">Contact</a></nav><button class="theme-toggle" id="darkModeToggle"><i class="fas fa-moon"></i><i class="fas fa-sun" style="display:none;"></i></button></div></header>
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Aditya<span>.</span>Abhyankar</a>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="resume.html" class="nav-link">Resume</a>
+        <a href="projects.html" class="nav-link active">Projects</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <button class="theme-toggle" id="darkModeToggle"><i class="fas fa-moon"></i><i class="fas fa-sun" style="display:none;"></i></button>
+    </div>
+  </header>
+
   <main class="container page-padding">
-    <div class="page-header fade-up"><h1>Featured Projects</h1><div class="underline"></div><p class="subhead">Real impact, measurable results</p></div>
-    <div class="projects-grid">
-      <div class="project-card fade-up">
-        <img src="assets/pepsico1.jpg" alt="PepsiCo facility project" class="project-img" onerror="this.style.display='none'">
-        <i class="fas fa-industry project-icon"></i>
-        <h3>PepsiCo Beverage Facility Schedule Optimisation</h3>
-        <p>Developed L1–L3 master schedule for greenfield facility. 98% milestone compliance, 30% fewer subcontractor conflicts using Primavera P6 and risk analysis.</p>
-        <div class="project-tech">Primavera P6 · Power BI · Risk Management</div>
-        <a href="#" class="project-link">Case study →</a>
+    <div class="page-header fade-up">
+      <h1>Selected work, by impact.</h1>
+      <p class="subhead">A blend of industrial construction planning, CAPEX delivery, ERP transformation and applied research.</p>
+    </div>
+
+    <div class="projects-full-grid">
+      <!-- Project 1 -->
+      <div class="project-full-card fade-up">
+        <div class="project-tag">INDUSTRIAL CONSTRUCTION</div>
+        <h3>PepsiCo Beverage Facility — Schedule Optimisation</h3>
+        <p>Built a 3‑tier project schedule across 30+ work packages and instrumented it with KPI dashboards that cut reporting time by 40%.</p>
+        <div class="project-metrics">
+          <span><strong>98%</strong> milestone compliance</span>
+          <span><strong>~3 weeks</strong> slippage avoided</span>
+          <span><strong>±5%</strong> variance fixed</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link">Preview project →</a>
+          <a href="#" class="project-link">View case study →</a>
+        </div>
       </div>
-      <div class="project-card fade-up delay-1">
-        <img src="assets/revolution-zero2.png" alt="Sterilisation plant" class="project-img" onerror="this.style.display='none'">
-        <i class="fas fa-flask project-icon"></i>
-        <h3>Sterilisation Plant CAPEX Delivery (2 Plants)</h3>
-        <p>Managed combined CAPEX £3M+, technical coordination, AutoCAD layouts, and as‑built documentation. Delivered ahead of schedule.</p>
-        <div class="project-tech">AutoCAD · MS Project · Budget Control</div>
-        <a href="#" class="project-link">Project overview →</a>
+
+      <!-- Project 2 -->
+      <div class="project-full-card fade-up delay-1">
+        <div class="project-tag">CAPEX DELIVERY</div>
+        <h3>Sterilisation Plant — CAPEX Delivery</h3>
+        <p>Led two large‑scale sterilisation plant builds end‑to‑end, covering scope, schedule, budget and technical drawings for a combined CAPEX of £3M+.</p>
+        <div class="project-metrics">
+          <span><strong>£3M+</strong> CAPEX delivered</span>
+          <span><strong>2 plants</strong> commissioned</span>
+          <span><strong>100%</strong> drawing traceability</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link">Preview project →</a>
+          <a href="#" class="project-link">View case study →</a>
+        </div>
       </div>
-      <div class="project-card fade-up delay-2">
-        <img src="assets/gray-fox.jpg" alt="ERP implementation" class="project-img" onerror="this.style.display='none'">
-        <i class="fas fa-chart-line project-icon"></i>
-        <h3>ERP Implementation (Gray Fox Consulting)</h3>
-        <p>Led ERP rollout, reduced project risks by 30%, shortened timeline by 15%, identified £100k annual savings.</p>
-        <div class="project-tech">Jira · SQL · Change Management</div>
-        <a href="#" class="project-link">Implementation story →</a>
+
+      <!-- Project 3 -->
+      <div class="project-full-card fade-up delay-2">
+        <div class="project-tag">DIGITAL TRANSFORMATION</div>
+        <h3>ERP Implementation — Gray Fox Consulting</h3>
+        <p>Drove an end‑to‑end ERP rollout that streamlined operations, hardened controls, and unlocked recurring annual savings.</p>
+        <div class="project-metrics">
+          <span><strong>£100k</strong> projected annual savings</span>
+          <span><strong>30%</strong> risk reduction</span>
+          <span><strong>15%</strong> faster timeline</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link">Preview project →</a>
+          <a href="#" class="project-link">View case study →</a>
+        </div>
       </div>
-      <div class="project-card fade-up">
-        <i class="fas fa-brain project-icon"></i>
-        <h3>AI in Risk Management (MSc Research)</h3>
-        <p>Dissertation on machine learning for predictive risk analysis. Dashboard reduced reporting turnaround by 40% in simulations.</p>
-        <div class="project-tech">Python · Tableau · Risk Registers</div>
-        <a href="#" class="project-link">Research abstract →</a>
+
+      <!-- Project 4 -->
+      <div class="project-full-card fade-up">
+        <div class="project-tag">APPLIED RESEARCH</div>
+        <h3>AI in Risk Management — MSc Research</h3>
+        <p>Original dissertation exploring how machine learning models surface latent project risks earlier than traditional qualitative registers.</p>
+        <div class="project-metrics">
+          <span><strong>Score 65</strong> / Commendation</span>
+          <span><strong>Northumbria University</strong></span>
+          <span><strong>Mixed‑methods</strong> study</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link">Preview research →</a>
+          <a href="#" class="project-link">View abstract →</a>
+        </div>
       </div>
     </div>
   </main>
-  <footer class="footer"><div class="container footer-flex"><p>© 2025 Aditya Abhyankar</p><div class="social-links"><a href="https://www.linkedin.com/in/aditya-abhyankar-249370194" target="_blank"><i class="fab fa-linkedin-in"></i></a><a href="mailto:Aditya.abhyankar22@gmail.com"><i class="fas fa-envelope"></i></a><a href="#"><i class="fab fa-github"></i></a></div></div></footer>
+
+  <footer class="footer">
+    <div class="container footer-flex">
+      <p>© 2025 Aditya Abhyankar. All rights reserved.</p>
+      <div class="social-links"><a href="https://www.linkedin.com/in/aditya-abhyankar-249370194" target="_blank"><i class="fab fa-linkedin-in"></i></a><a href="mailto:Aditya.abhyankar22@gmail.com"><i class="fas fa-envelope"></i></a><a href="#"><i class="fab fa-github"></i></a></div>
+    </div>
+  </footer>
   <button id="scrollTopBtn" class="scroll-top"><i class="fas fa-chevron-up"></i></button>
 </body>
 </html>
