@@ -263,6 +263,69 @@ body {
   margin: 0.7rem auto 0;
   border-radius: 2px;
 }
+/* Everything from previous CSS plus: */
+
+.company-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  margin-right: 12px;
+  border-radius: 6px;
+}
+
+.job-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.job-photos {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.job-photos img {
+  width: 120px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.job-photos img:hover {
+  transform: scale(1.02);
+}
+
+.profile-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid var(--accent);
+}
+
+.project-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .job-photos img {
+    width: 90px;
+    height: 70px;
+  }
+  .profile-img {
+    width: 140px;
+    height: 140px;
+  }
 @media (max-width: 768px) {
   .hero-grid, .about-grid, .contact-grid { flex-direction: column; grid-template-columns: 1fr; }
   .nav-links { gap: 1rem; }
