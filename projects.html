@@ -29,15 +29,19 @@
       <h1>Selected work, by impact.</h1>
       <p class="subhead">Industrial construction · CAPEX delivery · Digital transformation · Research</p>
     </div>
-    <div class="projects-full-grid" id="projectsFullGrid">
-      <!-- Projects will be injected via JS to keep data consistent -->
+    <div id="projectsFullGrid" class="projects-full-grid">
+      <!-- JavaScript will inject projects here. If JS fails, the hardcoded backup below will show -->
     </div>
   </main>
 
   <footer class="footer">
     <div class="container footer-flex">
       <p>© 2025 Aditya Abhyankar. All rights reserved.</p>
-      <div class="social-links"><a href="https://www.linkedin.com/in/aditya-abhyankar-249370194" target="_blank"><i class="fab fa-linkedin-in"></i></a><a href="mailto:Aditya.abhyankar22@gmail.com"><i class="fas fa-envelope"></i></a><a href="#"><i class="fab fa-github"></i></a></div>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/aditya-abhyankar-249370194" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:Aditya.abhyankar22@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+      </div>
     </div>
   </footer>
   <div id="toast" class="toast"></div>
@@ -48,5 +52,8 @@
     </div>
   </div>
   <button id="scrollTopBtn" class="scroll-top"><i class="fas fa-chevron-up"></i></button>
+
+  <!-- Backup inline projects (hidden by default, but will be replaced by JS) -->
+  <div style="display: none;" id="backup-projects"></div>
 </body>
 </html>
