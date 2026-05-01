@@ -12,7 +12,7 @@
 <body>
   <header class="navbar">
     <div class="container nav-container">
-      <a href="index.html" class="logo">Aditya<span>.</span>Abhyankar</a>
+      <a href="index.html" class="logo">Aditya Abhyankar</a>
       <nav class="nav-links">
         <a href="index.html" class="nav-link">Home</a>
         <a href="about.html" class="nav-link">About</a>
@@ -27,73 +27,10 @@
   <main class="container page-padding">
     <div class="page-header fade-up">
       <h1>Selected work, by impact.</h1>
-      <p class="subhead">A blend of industrial construction planning, CAPEX delivery, ERP transformation and applied research.</p>
+      <p class="subhead">Industrial construction · CAPEX delivery · Digital transformation · Research</p>
     </div>
-
-    <div class="projects-full-grid">
-      <!-- Project 1 -->
-      <div class="project-full-card fade-up">
-        <div class="project-tag">INDUSTRIAL CONSTRUCTION</div>
-        <h3>PepsiCo Beverage Facility — Schedule Optimisation</h3>
-        <p>Built a 3‑tier project schedule across 30+ work packages and instrumented it with KPI dashboards that cut reporting time by 40%.</p>
-        <div class="project-metrics">
-          <span><strong>98%</strong> milestone compliance</span>
-          <span><strong>~3 weeks</strong> slippage avoided</span>
-          <span><strong>±5%</strong> variance fixed</span>
-        </div>
-        <div class="project-links">
-          <a href="#" class="project-link">Preview project →</a>
-          <a href="#" class="project-link">View case study →</a>
-        </div>
-      </div>
-
-      <!-- Project 2 -->
-      <div class="project-full-card fade-up delay-1">
-        <div class="project-tag">CAPEX DELIVERY</div>
-        <h3>Sterilisation Plant — CAPEX Delivery</h3>
-        <p>Led two large‑scale sterilisation plant builds end‑to‑end, covering scope, schedule, budget and technical drawings for a combined CAPEX of £3M+.</p>
-        <div class="project-metrics">
-          <span><strong>£3M+</strong> CAPEX delivered</span>
-          <span><strong>2 plants</strong> commissioned</span>
-          <span><strong>100%</strong> drawing traceability</span>
-        </div>
-        <div class="project-links">
-          <a href="#" class="project-link">Preview project →</a>
-          <a href="#" class="project-link">View case study →</a>
-        </div>
-      </div>
-
-      <!-- Project 3 -->
-      <div class="project-full-card fade-up delay-2">
-        <div class="project-tag">DIGITAL TRANSFORMATION</div>
-        <h3>ERP Implementation — Gray Fox Consulting</h3>
-        <p>Drove an end‑to‑end ERP rollout that streamlined operations, hardened controls, and unlocked recurring annual savings.</p>
-        <div class="project-metrics">
-          <span><strong>£100k</strong> projected annual savings</span>
-          <span><strong>30%</strong> risk reduction</span>
-          <span><strong>15%</strong> faster timeline</span>
-        </div>
-        <div class="project-links">
-          <a href="#" class="project-link">Preview project →</a>
-          <a href="#" class="project-link">View case study →</a>
-        </div>
-      </div>
-
-      <!-- Project 4 -->
-      <div class="project-full-card fade-up">
-        <div class="project-tag">APPLIED RESEARCH</div>
-        <h3>AI in Risk Management — MSc Research</h3>
-        <p>Original dissertation exploring how machine learning models surface latent project risks earlier than traditional qualitative registers.</p>
-        <div class="project-metrics">
-          <span><strong>Score 65</strong> / Commendation</span>
-          <span><strong>Northumbria University</strong></span>
-          <span><strong>Mixed‑methods</strong> study</span>
-        </div>
-        <div class="project-links">
-          <a href="#" class="project-link">Preview research →</a>
-          <a href="#" class="project-link">View abstract →</a>
-        </div>
-      </div>
+    <div class="projects-full-grid" id="projectsFullGrid">
+      <!-- Projects will be injected via JS to keep data consistent -->
     </div>
   </main>
 
@@ -103,6 +40,13 @@
       <div class="social-links"><a href="https://www.linkedin.com/in/aditya-abhyankar-249370194" target="_blank"><i class="fab fa-linkedin-in"></i></a><a href="mailto:Aditya.abhyankar22@gmail.com"><i class="fas fa-envelope"></i></a><a href="#"><i class="fab fa-github"></i></a></div>
     </div>
   </footer>
+  <div id="toast" class="toast"></div>
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <div id="modal-body"></div>
+    </div>
+  </div>
   <button id="scrollTopBtn" class="scroll-top"><i class="fas fa-chevron-up"></i></button>
 </body>
 </html>
