@@ -20,7 +20,7 @@
         <a href="projects.html" class="nav-link">Projects</a>
         <a href="contact.html" class="nav-link">Contact</a>
       </nav>
-      <button class="theme-toggle" id="darkModeToggle" aria-label="Dark mode"><i class="fas fa-moon"></i><i class="fas fa-sun" style="display:none;"></i></button>
+      <button class="theme-toggle" id="darkModeToggle"><i class="fas fa-moon"></i><i class="fas fa-sun" style="display:none;"></i></button>
     </div>
   </header>
 
@@ -28,6 +28,7 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-text fade-up">
+          <div class="hero-badge">8+ years of impact</div>
           <h1>Aditya Abhyankar</h1>
           <p class="hero-titles">Mechanical Engineer · Project Planner · Technical Project Manager</p>
           <p class="hero-description">Engineering‑disciplined delivery — schedules, structures, and systems that move multi‑million pound projects forward.</p>
@@ -58,45 +59,16 @@
       <div class="competency-grid">
         <span>Project Planning (L1-L3)</span><span>Primavera P6 / MS Project</span><span>CAPEX Delivery</span>
         <span>Subcontractor Coordination</span><span>Earned Value Analysis</span><span>KPI Dashboards</span>
-        <span>Risk Management</span><span>AutoCAD</span><span>ERP Implementation</span>
+        <span>Risk & Float Management</span><span>Document Control</span><span>AutoCAD</span>
       </div>
     </section>
 
     <section class="featured-projects container fade-up">
       <h2>SELECTED WORK</h2>
-      <div class="projects-preview-grid">
-        <div class="preview-card" data-project-id="0">
-          <span class="project-category">INDUSTRIAL CONSTRUCTION</span>
-          <h3>PepsiCo Beverage Facility — Schedule Optimisation</h3>
-          <p>Leading project planning for a major PepsiCo facility, achieving 98% milestone compliance through 3-tier scheduling.</p>
-          <div class="metric-chips"><span>98% compliance</span><span>±5% variance</span><span>40% faster reporting</span></div>
-          <div class="preview-links">
-            <a href="#" class="preview-link" data-id="0">Preview project →</a>
-            <a href="#" class="case-link" data-id="0">View case study →</a>
-          </div>
-        </div>
-        <div class="preview-card" data-project-id="1">
-          <span class="project-category">CAPEX DELIVERY</span>
-          <h3>UK Sterilisation Plant Rollout</h3>
-          <p>Directed £3M+ CAPEX delivery of sterilization plants across the UK, managing technical design and compliance.</p>
-          <div class="metric-chips"><span>£3M+ delivered</span><span>2 plants</span><span>100% traceability</span></div>
-          <div class="preview-links">
-            <a href="#" class="preview-link" data-id="1">Preview project →</a>
-            <a href="#" class="case-link" data-id="1">View case study →</a>
-          </div>
-        </div>
-        <div class="preview-card" data-project-id="2">
-          <span class="project-category">DIGITAL TRANSFORMATION</span>
-          <h3>ERP Implementation & Digital Transformation</h3>
-          <p>Orchestrated ERP roadmap that improved efficiency by 10% and identified $100k annual savings.</p>
-          <div class="metric-chips"><span>$100k savings</span><span>30% risk reduction</span><span>15% faster</span></div>
-          <div class="preview-links">
-            <a href="#" class="preview-link" data-id="2">Preview project →</a>
-            <a href="#" class="case-link" data-id="2">View case study →</a>
-          </div>
-        </div>
+      <div class="projects-preview-grid" id="featuredProjectsGrid">
+        <!-- Will be populated by JS -->
       </div>
-      <div class="text-center"><a href="projects.html" class="btn btn-outline">View all 6 projects →</a></div>
+      <div class="text-center"><a href="projects.html" class="btn btn-outline">View all projects →</a></div>
     </section>
   </main>
 

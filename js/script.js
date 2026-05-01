@@ -32,7 +32,7 @@ window.addEventListener('scroll', () => {
 });
 if (scrollBtn) scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-// Toast function
+// Toast
 function showToast(message, duration = 4000) {
   let toast = document.getElementById('toast');
   if (!toast) {
@@ -46,11 +46,10 @@ function showToast(message, duration = 4000) {
   setTimeout(() => toast.classList.remove('show'), duration);
 }
 
-// ================= PROJECT DATA (6 projects) =================
+// Project data (same 6 projects)
 const projectsData = [
   {
-    id: 0,
-    tag: "INDUSTRIAL CONSTRUCTION",
+    id: 0, tag: "INDUSTRIAL CONSTRUCTION",
     title: "PepsiCo Beverage Manufacturing Facility Expansion",
     preview: "Leading project planning and execution support for a major PepsiCo facility, achieving 98% milestone compliance through advanced 3-tier scheduling and cross-functional coordination.",
     context: "Delivering industrial works within a live production environment for PepsiCo India Holdings, focusing on utility integration and sustainability-driven infrastructure.",
@@ -60,8 +59,7 @@ const projectsData = [
     metrics: ["98% milestone compliance", "±5% variance", "40% faster reporting"]
   },
   {
-    id: 1,
-    tag: "CAPEX DELIVERY",
+    id: 1, tag: "CAPEX DELIVERY",
     title: "UK-Wide Sterilization Plant Rollout (Revolution-ZERO)",
     preview: "Directed the end-to-end CAPEX delivery of £3M+ sterilization plant projects across the UK, managing technical design and regulatory compliance.",
     context: "Managing large-scale technical infrastructure projects in a high-compliance environment.",
@@ -71,8 +69,7 @@ const projectsData = [
     metrics: ["£3M+ CAPEX delivered", "2 plants commissioned", "100% traceability"]
   },
   {
-    id: 2,
-    tag: "DIGITAL TRANSFORMATION",
+    id: 2, tag: "DIGITAL TRANSFORMATION",
     title: "ERP Implementation & Digital Transformation",
     preview: "Orchestrated an ERP implementation roadmap that improved operational efficiency by 10% and identified $100,000 in annual savings.",
     context: "Analyzing business processes for Gray Fox Consulting to identify digital improvement opportunities through structured ERP integration.",
@@ -82,8 +79,7 @@ const projectsData = [
     metrics: ["$100k annual savings", "30% risk reduction", "15% faster timeline"]
   },
   {
-    id: 3,
-    tag: "IT SERVICE MANAGEMENT",
+    id: 3, tag: "IT SERVICE MANAGEMENT",
     title: "NHS Large-Scale Email Migration Support",
     preview: "Provided critical technical support during a high-pressure enterprise email migration for the NHS, maintaining a 95% issue resolution rate.",
     context: "Supporting a major digital transformation activity for the NHS Business Services Authority involving enterprise-level systems.",
@@ -93,8 +89,7 @@ const projectsData = [
     metrics: ["95% issue resolution", "Enterprise migration", "0 downtime"]
   },
   {
-    id: 4,
-    tag: "DIVERSITY & INCLUSION",
+    id: 4, tag: "DIVERSITY & INCLUSION",
     title: "Institutional Diversity & Inclusion Initiatives",
     preview: "Developed and implemented strategic D&I initiatives at Northumbria University, leading to a 20% increase in student satisfaction.",
     context: "Collaborating with university stakeholders to improve communication, engagement, and inclusion practices across diverse groups.",
@@ -104,8 +99,7 @@ const projectsData = [
     metrics: ["20% student satisfaction", "TED Talk co-organizer", "RAISE 2022 speaker"]
   },
   {
-    id: 5,
-    tag: "APPLIED RESEARCH",
+    id: 5, tag: "APPLIED RESEARCH",
     title: "Research: AI in Project Risk Management (MSc Dissertation)",
     preview: "A quantitative research study investigating how Artificial Intelligence can be leveraged to identify and mitigate risks in complex project environments.",
     context: "Completed as part of an MSc in Project Management at Northumbria University to explore AI in modern project controls.",
@@ -116,13 +110,35 @@ const projectsData = [
   }
 ];
 
-// Render projects on projects.html
-function renderProjects() {
+// Render featured projects on homepage
+function renderFeaturedProjects() {
+  const container = document.getElementById('featuredProjectsGrid');
+  if (!container) return;
+  container.innerHTML = '';
+  projectsData.slice(0, 3).forEach(proj => {
+    const card = document.createElement('div');
+    card.className = 'preview-card fade-up';
+    card.innerHTML = `
+      <div class="project-category">${proj.tag}</div>
+      <h3>${proj.title}</h3>
+      <p>${proj.preview}</p>
+      <div class="metric-chips">
+        ${proj.metrics.map(m => `<span>${m}</span>`).join('')}
+      </div>
+      <div class="preview-links">
+        <a href="#" class="preview-link" data-id="${proj.id}">Preview project →</a>
+        <a href="#" class="case-link" data-id="${proj.id}">View case study →</a>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+  attachProjectLinkListeners();
+}
+
+// Render all projects on projects.html
+function renderAllProjects() {
   const container = document.getElementById('projectsFullGrid');
-  if (!container) {
-    console.warn('projectsFullGrid container not found');
-    return;
-  }
+  if (!container) return;
   container.innerHTML = '';
   projectsData.forEach(proj => {
     const card = document.createElement('div');
@@ -133,9 +149,6 @@ function renderProjects() {
       <p>${proj.preview}</p>
       <div class="project-metrics">
         ${proj.metrics.map(m => `<span>${m}</span>`).join('')}
-      </div>
-      <div class="project-skills">
-        ${proj.skills.map(s => `<span>${s}</span>`).join('')}
       </div>
       <div class="project-links">
         <a href="#" class="project-link preview-link" data-id="${proj.id}">Preview project →</a>
@@ -197,52 +210,37 @@ function showProjectModal(project, type) {
   };
 }
 
-// For index page preview links
-function initIndexPreviews() {
-  const previewCards = document.querySelectorAll('.preview-card');
-  previewCards.forEach((card, idx) => {
-    if (idx < projectsData.length) {
-      const proj = projectsData[idx];
-      const previewLink = card.querySelector('.preview-link');
-      const caseLink = card.querySelector('.case-link');
-      if (previewLink) previewLink.setAttribute('data-id', proj.id);
-      if (caseLink) caseLink.setAttribute('data-id', proj.id);
-    }
-  });
-  attachProjectLinkListeners();
-}
-
-// ================= MAILTO CONTACT FORM (FIXED) =================
+// Contact form handling (Web3Forms)
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const nameInput = document.getElementById('name');
-    const emailInput = document.getElementById('email');
-    const messageInput = document.getElementById('message');
-    if (!nameInput || !emailInput || !messageInput) return;
-    const name = nameInput.value.trim();
-    const email = emailInput.value.trim();
-    const message = messageInput.value.trim();
-    if (!name || !email || !message) {
-      showToast('Please fill in all fields.', 3000);
-      return;
+    const formData = new FormData(contactForm);
+    const email = document.getElementById('email')?.value;
+    if (email) {
+      document.getElementById('replyto-field').value = email;
     }
-    if (!email.includes('@') || !email.includes('.')) {
-      showToast('Please enter a valid email address.', 3000);
-      return;
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        showToast('Thank you! Your message has been sent. I will reply within 48 hours.');
+        contactForm.reset();
+      } else {
+        showToast('Something went wrong. Please try again later.', 5000);
+      }
+    } catch (error) {
+      showToast('Network error. Please check your connection.', 5000);
     }
-    // Build mailto: link
-    const to = 'Aditya.abhyankar22@gmail.com';
-    const subject = encodeURIComponent(`Portfolio contact from ${name}`);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-    window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
-    showToast('Opening your email client... Please send the email.', 4000);
   });
 }
 
-// Run on page load
+// Initialize
 document.addEventListener('DOMContentLoaded', () => {
-  renderProjects();
-  initIndexPreviews();
+  renderFeaturedProjects();
+  renderAllProjects();
+  attachProjectLinkListeners();
 });
